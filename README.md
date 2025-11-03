@@ -109,18 +109,19 @@ food_ordering_system/
 
 
 
-
 ## 🏗️ System Architecture
 
 ```mermaid
 flowchart TD
     A[User (Web/Mobile)] --> B[Load Balancer]
     B --> C[FastAPI App Cluster]
-    subgraph C1[FastAPI App Instances]
+
+    subgraph C1 [FastAPI App Instances]
         C1A[FastAPI App #1]
         C1B[FastAPI App #2]
         C1C[FastAPI App #3]
     end
+
     C --> D[API Layer (api/chat.py)]
     D --> E[LLM Orchestration Layer (agents/orchestrator.py)]
     E --> F[LangChain Tools (agents/tools.py)]
