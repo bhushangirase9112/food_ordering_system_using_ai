@@ -108,31 +108,23 @@ food_ordering_system/
 
 
 
-
-## 🏗️ System Architecture
-
-```mermaid
 flowchart TD
-    A[User (Web/Mobile)] --> B[Load Balancer]
+    A["User (Web/Mobile)"] --> B[Load Balancer]
     B --> C[FastAPI App Cluster]
-
     subgraph C1 [FastAPI App Instances]
-        C1A[FastAPI App #1]
-        C1B[FastAPI App #2]
-        C1C[FastAPI App #3]
+        C1A["FastAPI App #1"]
+        C1B["FastAPI App #2"]
+        C1C["FastAPI App #3"]
     end
-
-    C --> D[API Layer (api/chat.py)]
-    D --> E[LLM Orchestration Layer (agents/orchestrator.py)]
-    E --> F[LangChain Tools (agents/tools.py)]
-    F --> G[Database Manager (db/manager.py)]
+    C --> D["API Layer (api/chat.py)"]
+    D --> E["LLM Orchestration Layer (agents/orchestrator.py)"]
+    E --> F["LangChain Tools (agents/tools.py)"]
+    F --> G["Database Manager (db/manager.py)"]
     G --> H[(PostgreSQL Database)]
-
     %% Supporting Modules
-    I[Menu Config (config.py)] -.-> F
-    J[Pydantic Models (models/schemas.py)] -.-> D
-
+    I["Menu Config (config.py)"] -.-> F
+    J["Pydantic Models (models/schemas.py)"] -.-> D
     %% Scalability Components
-    B --> K[Auto Scaling (Kubernetes / ECS)]
+    B --> K["Auto Scaling (Kubernetes / ECS)"]
     K --> B
-    G --> L[(Read Replicas / Caching - Redis)]
+    G --> L["(Read Replicas / Caching - Redis)"]
