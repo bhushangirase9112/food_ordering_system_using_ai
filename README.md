@@ -108,4 +108,4 @@ food_ordering_system/
 
 ## Architecture Diagram
 
-![Food Ordering System Architecture](./Architecture diagram.png)
+![Food Ordering System Architecture](.Architecture diagram.png)
