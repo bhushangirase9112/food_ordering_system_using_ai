@@ -110,8 +110,6 @@ food_ordering_system/
 
 
 
-
-
 ## 🏗️ System Architecture
 
 ```mermaid
@@ -137,4 +135,3 @@ flowchart TD
     B --> K[Auto Scaling (Kubernetes / ECS)]
     K --> B
     G --> L[(Read Replicas / Caching - Redis)]
-
