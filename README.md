@@ -109,4 +109,3 @@ food_ordering_system/
 ## Architecture Diagram
 
 ![Food Ordering System Architecture](./Architecture diagram.png)
-    G --> L["(Read Replicas / Caching - Redis)"]
